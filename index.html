@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Big Fish Lures — sklep z przynętami. Najlepsze przynęty dla prawdziwych łowców." />
+  <title>Big Fish Lures – Sklep wędkarski</title>
+
+  <style>
+    :root{
+      --bg: #0c2c3c;
+      --header-bg: #0a1f29;
+      --card-bg: #113949;
+      --accent: #1ba2d1;
+      --accent-dark: #1482a7;
+      --text: #ffffff;
+    }
+
+    *{box-sizing: border-box}
+    html,body{height:100%}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    header {
+      background: var(--header-bg);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+    }
+
+    header h1{
+      margin: 0;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .hero {
+      position: relative;
+      background: url("https://www.tapeciarnia.pl/tapety/normalne/224715_wodospad_ryby.jpg") center/cover no-repeat;
+      min-height: 48vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* przyciemnienie warstwy na obrazie dla kontrastu tekstu */
+    .hero::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.45));
+      z-index: 0;
+    }
+
+    .hero .hero-content{
+      position: relative;
+      z-index: 1;
+      font-size: clamp(1.4rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+      padding: 0 1rem;
+    }
+
+    main{max-width:1200px;margin:0 auto;padding:2rem;}
+
+    h2 {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 2rem;
+    }
+
+    .product-container {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding: 2rem 1rem;
+    }
+
+    .product {
+      background: var(--card-bg);
+      width: 300px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      transition: transform .25s ease, box-shadow .25s ease;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .product:focus-within,
+    .product:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.7);
+    }
+
+    .product figure{margin:0}
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display:block;
+    }
+
+    .product-info {
+      padding: 16px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .product-info h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.25rem;
+    }
+
+    .product-info p {
+      font-size: 0.95rem;
+      opacity: 0.95;
+      margin: 0 0 12px 0;
+      line-height:1.4;
+      flex:1;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: background .18s ease, transform .18s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+      border: none;
+    }
+
+    .product-link:hover,
+    .product-link:focus {
+      background: var(--accent-dark);
+      transform: translateY(-3px);
+      outline: none;
+    }
+
+    .product-link::after {
+      content: "→";
+      display:inline-block;
+      transition: transform .18s ease;
+    }
+
+    .product-link:hover::after { transform: translateX(4px); }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 32px;
+      background: var(--header-bg);
+      border-top: 4px solid var(--accent);
+      font-size: 0.95rem;
+    }
+
+    /* responsywność */
+    @media (max-width: 640px){
+      .product { width: 100%; max-width: 420px; }
+      .hero { min-height: 34vh; }
+      header h1 { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <h1>BIG FISH LURES</h1>
+  </header>
+
+  <div class="hero" role="img" aria-label="Wodospad i ryby, tło hero">
+    <div class="hero-content">
+      Najlepsze przynęty dla prawdziwych łowców!
+    </div>
+  </div>
+
+  <main role="main" aria-labelledby="products-heading">
+    <h2 id="products-heading">Nasze przynęty</h2>
+
+    <section class="product-container" aria-label="Lista produktów">
+      <article class="product" aria-labelledby="prod1-title">
+        <figure>
+          <img src="https://static.vecteezy.com/system/resources/previews/013/711/150/original/coming-soon-teaser-promo-display-graphic-asset-style-1-vector.jpg"
+               alt="Przykładowa przynęta - zdjęcie podglądowe" loading="lazy" width="600" height="440">
+        </figure>
+        <div class="product-info">
+          <h3 id="prod1-title">Coś tu kiedyś będzie</h3>
+          <p>Krótki opis produktu. Zaktualizuj opis i obrazek na właściwe treści produktu.</p>
+          <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 1">Zobacz więcej</a>
+        </div>
+      </article>
+
+      <article class="product" aria-labelledby="prod2-title">
+        <figure>
+          <img src="https://static.vecteezy.com/system/resources/previews/013/711/150/original/coming-soon-teaser-promo-display-graphic-asset-style-1-vector.jpg"
+               alt="Przykładowa przynęta - zdjęcie podglądowe" loading="lazy" width="600" height="440">
+        </figure>
+        <div class="product-info">
+          <h3 id="prod2-title">Coś tu kiedyś będzie</h3>
+          <p>Krótki opis produktu. Zaktualizuj opis i obrazek na właściwe treści produktu.</p>
+          <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 2">Zobacz więcej</a>
+        </div>
+      </article>
+
+      <article class="product" aria-labelledby="prod3-title">
+        <figure>
+          <img src="https://static.vecteezy.com/system/resources/previews/013/711/150/original/coming-soon-teaser-promo-display-graphic-asset-style-1-vector.jpg"
+               alt="Przykładowa przynęta - zdjęcie podglądowe" loading="lazy" width="600" height="440">
+        </figure>
+        <div class="product-info">
+          <h3 id="prod3-title">Coś tu kiedyś będzie</h3>
+          <p>Krótki opis produktu. Zaktualizuj opis i obrazek na właściwe treści produktu.</p>
+          <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 3">Zobacz więcej</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    © 2025 Big Fish Lures – Najlepsze przynęty w sieci!
+  </footer>
+</body>
+</html>
