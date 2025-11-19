@@ -8,9 +8,11 @@
 
   <style>
     :root{
-      --bg: #0c2c3c;
-      --header-bg: #0a1f29;
-      --card-bg: #113949;
+      --bg-start: #001f3f; /* ciemny granat */
+      --bg-mid: #003f71;   /* średni niebieski */
+      --bg-end: #1ca4ff;   /* jasny akcent */
+      --header-bg: #071826;
+      --card-bg: rgba(17,57,73,0.85);
       --accent: #1ba2d1;
       --accent-dark: #1482a7;
       --text: #ffffff;
@@ -21,10 +23,11 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
+      background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-mid) 60%, var(--bg-end) 100%);
       color: var(--text);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
+      min-height:100%;
     }
 
     header {
@@ -43,13 +46,14 @@
 
     .hero {
       position: relative;
-      background: url("https://www.tapeciarnia.pl/tapety/normalne/224715_wodospad_ryby.jpg") center/cover no-repeat;
-      min-height: 48vh;
+      min-height: 44vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 2rem;
       text-align: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.15));
+      border-bottom: 1px solid rgba(255,255,255,0.03);
     }
 
     /* przyciemnienie warstwy na obrazie dla kontrastu tekstu */
@@ -121,6 +125,25 @@
     .product-info h3 {
       margin: 0 0 8px 0;
       font-size: 1.25rem;
+    }
+
+    .price {
+      font-weight: 800;
+      color: #ffeb3b;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .btn-add {
+      display: inline-block;
+      padding: 10px 14px;
+      background: #ff7a18;
+      color: #fff;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-left: 8px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.35);
     }
 
     .product-info p {
@@ -202,8 +225,12 @@
         </figure>
         <div class="product-info">
           <h3 id="prod1-title">Coś tu kiedyś będzie</h3>
+          <div class="price">199,00 zł</div>
           <p>Krótki opis produktu. Zaktualizuj opis i obrazek na właściwe treści produktu.</p>
-          <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 1">Zobacz więcej</a>
+          <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
+            <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 1">Zobacz więcej</a>
+            <a class="btn-add" href="#" role="button" aria-label="Dodaj produkt 1 do koszyka">Dodaj</a>
+          </div>
         </div>
       </article>
 
@@ -213,9 +240,13 @@
                alt="Przykładowa przynęta - zdjęcie podglądowe" loading="lazy" width="600" height="440">
         </figure>
         <div class="product-info">
-          <h3 id="prod2-title">Coś tu kiedyś będzie</h3>
-          <p>Krótki opis produktu. Zaktualizuj opis i obrazek na właściwe treści produktu.</p>
-          <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 2">Zobacz więcej</a>
+          <h3 id="prod2-title">Ripper X</h3>
+          <div class="price">89,00 zł</div>
+          <p>Elastyczna przynęta do zacięć przybrzeżnych. Świetna akcja i trwałość.</p>
+          <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
+            <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 2">Zobacz więcej</a>
+            <a class="btn-add" href="#" role="button" aria-label="Dodaj produkt 2 do koszyka">Dodaj</a>
+          </div>
         </div>
       </article>
 
@@ -225,9 +256,13 @@
                alt="Przykładowa przynęta - zdjęcie podglądowe" loading="lazy" width="600" height="440">
         </figure>
         <div class="product-info">
-          <h3 id="prod3-title">Coś tu kiedyś będzie</h3>
-          <p>Krótki opis produktu. Zaktualizuj opis i obrazek na właściwe treści produktu.</p>
-          <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 3">Zobacz więcej</a>
+          <h3 id="prod3-title">Wobbler Pro</h3>
+          <div class="price">129,00 zł</div>
+          <p>Wysokiej klasy wobbler z realistycznym wykończeniem, idealny na większe drapieżniki.</p>
+          <div style="margin-top:12px; display:flex; gap:8px; align-items:center;">
+            <a class="product-link" href="#" role="button" aria-label="Zobacz więcej o produkcie 3">Zobacz więcej</a>
+            <a class="btn-add" href="#" role="button" aria-label="Dodaj produkt 3 do koszyka">Dodaj</a>
+          </div>
         </div>
       </article>
     </section>
